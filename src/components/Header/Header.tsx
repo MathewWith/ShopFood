@@ -1,30 +1,29 @@
-import {connect} from 'react-redux';
 import {Link} from 'react-router-dom';
-import getItems from 'src/reducers/thunk'
+import {AppPaths} from 'src/shared/models/appPaths';
 
-const Header = ({getItems}: {getItems: any}) => {
+const Header = () => {
     return(
         <div className="header">
             <ul>
                 <li>
-                    <Link className="link" to='/' >
-                        Go to Home Page
+                    <Link className="link" to={AppPaths.HOME} >
+                        Home
                     </Link>   
                 </li>
                 <li>
-                    <Link className="link" to='/protected'>
-                        Go to Protected Page
+                    <Link className="link" to={`/${AppPaths.LOGIN}`}>
+                        Login
                     </Link>   
                 </li>
                 <li>
-                    <Link className="link" to='/unprotected'>
-                        Go to Unprotected Page
+                    <Link className="link" to={`/${AppPaths.REGISTRATION}`}>
+                        Registration 
                     </Link>   
                 </li>
                 <li>
                     <Link 
-                    className="link" to='/Routes'>
-                        Go to Routes
+                    className="link" to={`/${AppPaths.NOTES}`}>
+                        Routes
                     </Link>   
                 </li>
             </ul>
@@ -32,4 +31,4 @@ const Header = ({getItems}: {getItems: any}) => {
     )
 }
 
-export default connect(null, getItems)(Header)
+export default Header

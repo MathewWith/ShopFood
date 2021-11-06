@@ -1,16 +1,16 @@
-.button{
-    width: 100%;
-    padding-left: 22%;
-    .button-btn{
-        margin-left: 30px;
-        margin-top: 3%;
-        width: 25%;
-        border-radius: 5px;
-    }
-    .button-btn:hover{
-        background-color: rgb(196, 230, 104);
-    }
-    .button-btn:active{
-        background-color: rgb(112, 139, 36);
-    }
+.button {
+  width: 100%;
+  padding-left: 27%;
+  .button-btn {
+    margin-left: 50px;
+    margin-top: 3%;
+    width: 25%;
+    border-radius: 5px;
+  }
+  .button-btn:hover {
+    background-color: rgb(196, 230, 104);
+  }
+  .button-btn:active {
+    background-color: rgb(112, 139, 36);
+  }
 }

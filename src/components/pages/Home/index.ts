@@ -1,4 +1,4 @@
 import Home from "./Home";
-import './Home.scss';
+import "./Home.scss";
 
 export default Home;

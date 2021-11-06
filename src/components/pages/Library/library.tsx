@@ -1,17 +1,23 @@
 import {connect} from "react-redux";
-import React, { useEffect } from "react";
-import NoteBlock from "src/components/pages/Note";
-import { Note } from "src/shared/models/note";
-import getItems from 'src/reducers/thunk'
+import {useEffect} from "react";
+import NoteBlock from "src/components/pages/NoteBlock";
+import {Note} from "src/shared/models/note";
+import getNotes from 'src/store/actions/notes'
 
+// type LibraryProps = {
+//     getNotes: Function,
+//     notes: Note[]
+// }
 
-const Library = ({notes, getItems}: {notes: any, getItems: any}) => {
+const Library = (props: any) => {
+
+    const {getNotes} = props
+    const {notes} = props
 
     useEffect(() => {
         async function fetchData() {
-            await getItems()
+            await getNotes()
         }
-
         fetchData()
     }, [] );
 
@@ -19,7 +25,7 @@ const Library = ({notes, getItems}: {notes: any, getItems: any}) => {
     console.log('array notes', notes)
     return (
         <div>
-            {!!notes &&  notes.map((note: Note) => <NoteBlock note={note}/>) }
+            {!!notes &&  notes.map((note: Note, index: number) => <NoteBlock note={note} key={index}/>) }
         </div>
     )
 }
@@ -30,4 +36,10 @@ const mapStateToProps = (state: any) => {
     }
 }
 
-export default connect(mapStateToProps, getItems)(Library);
+// const mapDispatchToProps = (dispatch: any) => {
+//     return {
+//         getNotes: bindActionCreators(getNotes, dispatch)
+//     }
+// }
+
+export default connect(mapStateToProps, getNotes)(Library);

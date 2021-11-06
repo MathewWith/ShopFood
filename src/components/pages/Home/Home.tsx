@@ -1,24 +1,24 @@
 import React, {useState} from "react";
 import {connect} from "react-redux";
-import thunkLogin from "src/reducers/thunk";
+import login from "src/store/actions/auth";
 
-const Home = ({thunkLogin}: {thunkLogin: any}) => {
+const Home = ({login}: {login: any}) => {
 
-    const [email, setEmail] = useState("");
-    const [password, setPassword] = useState("")
+    // const [email, setEmail] = useState("");
+    // const [password, setPassword] = useState("")
 
-    const getEmailFromInput = ({target: {value}}: {target: {value: string}}) => {
-        setEmail(value)
-    }
+    // const getEmailFromInput = ({target: {value}}: {target: {value: string}}) => {
+    //     setEmail(value)
+    // }
 
-    const getPasswordFromInput = ({target: {value}}: {target: {value: string}}) => {
-        setPassword(value)
-    }
+    // const getPasswordFromInput = ({target: {value}}: {target: {value: string}}) => {
+    //     setPassword(value)
+    // }
 
     return (
         <div className="home">
-            <h1>Home Page</h1>
-            <br />
+            <h1 className="title">Home Page</h1>
+            {/* <br />
             <input 
                 type="text" 
                 placeholder="Email"
@@ -31,10 +31,10 @@ const Home = ({thunkLogin}: {thunkLogin: any}) => {
                 value={password}
                 onChange={getPasswordFromInput} />
             <br/> 
-            <button onClick={() => thunkLogin({email, password})}>Sign in</button>
+            <button onClick={() => login({email, password})}>Sign in</button> */}
         </div>
     )
 }
 
 
-export default connect(null, thunkLogin)(Home);
+export default connect(null, login)(Home);

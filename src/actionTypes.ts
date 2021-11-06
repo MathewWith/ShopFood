@@ -1,2 +1,0 @@
-export const ADD_ITEMS = 'ADD_ITEMS';
-export const ADD_ITEMS_FAILURE = 'ADD_ITEMS_FAILURE';

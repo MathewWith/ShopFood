@@ -1,0 +1,6 @@
+export enum ActionTypes {
+    ADD_ITEMS_FAILURE = 'ADD_ITEMS_FAILURE',
+    ADD_NOTES = 'ADD_NOTES',
+    REGISTRATION = 'REGISTRATION',
+    LOGIN = 'LOGIN'
+}

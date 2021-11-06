@@ -1,8 +1,7 @@
 import React, {FC} from 'react';
 import { BrowserRouter as Router } from 'react-router-dom';
-import Buttons from 'src/components/Buttons';
 import Header from 'src/components/Header';
-import IsRoute from 'src/components/routes/routes'
+import IsRoute from 'src/router'
 import setRequestInterceptor from 'src/shared/interceptor/interceptor';
 
 
@@ -13,7 +12,6 @@ export const App: FC = () => {
     <div className="App">
         <Router>
           <Header />
-          <Buttons />
           <IsRoute />
         </Router>
     </div>

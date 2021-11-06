@@ -1,12 +1,12 @@
-import React from 'react';
-import { Redirect, Route } from 'react-router';
+import {Redirect, Route} from 'react-router';
+import {AppPaths} from '../models/appPaths';
 
 
-const GuardRoute = ({ component: Component, auth, path }: {component: any, auth: boolean, path: string}) => {
+const GuardRoute = ({ path, component: Component, auth}: {component: any, auth: boolean, path: string}) => {
     return <Route {...path} render= {(props) => (
         auth === true 
             ? <Component {...props} />
-            : <Redirect to='/' />
+            : <Redirect to={AppPaths.HOME} />
     )}/>
 }
 
